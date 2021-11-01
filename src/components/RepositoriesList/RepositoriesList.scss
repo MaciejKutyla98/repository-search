@@ -1,7 +1,7 @@
-@use './variables' as *;
-@use './card' as *;
-@use './buttons' as *;
-@use './mixins' as *;
+@use '../../stylesheets/variables' as *;
+@use '../../stylesheets/card' as *;
+@use '../../stylesheets/buttons' as *;
+@use '../../stylesheets/mixins' as *;
 
 
 .repositoryContent {

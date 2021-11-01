@@ -1,0 +1,17 @@
+@use '../../stylesheets/variables' as *;
+@use '../../stylesheets/buttons' as *;
+@use '../../stylesheets/mixins' as *;
+@use '../../stylesheets/card' as *;
+
+.showHintsContent {
+  @extend %cardContent;
+  padding: 16px;
+
+  &_name {
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

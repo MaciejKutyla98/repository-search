@@ -1,7 +1,7 @@
-@use './variables' as *;
-@use './buttons' as *;
-@use './mixins' as *;
-@use './card' as *;
+@use '../../stylesheets/variables' as *;
+@use '../../stylesheets/buttons' as *;
+@use '../../stylesheets/mixins' as *;
+@use '../../stylesheets/card' as *;
 
 .favoriteRepositoryContent {
   @extend %cardContent;

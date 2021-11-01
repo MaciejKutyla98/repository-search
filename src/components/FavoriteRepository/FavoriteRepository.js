@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../stylesheets/FavoriteRepository.scss';
+import './FavoriteRepository.scss';
 
 export default function FavoriteRepository(props) {
     const repositoryName = "repository-search";

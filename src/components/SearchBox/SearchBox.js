@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../stylesheets/SearchBox.scss';
+import './SearchBox.scss';
 import {Link, useHistory} from "react-router-dom";
 
 export default function SearchBox(props) {

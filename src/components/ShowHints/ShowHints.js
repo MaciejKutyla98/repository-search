@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../stylesheets/ShowHints.scss';
+import './ShowHints.scss';
 
 export default function ShowHints(props) {
     const repositoryName = "repository-search";

@@ -1,6 +1,6 @@
 import './App.scss';
-import HomePage from "./components/HomePage";
-import DisplayPage from "./components/DisplayPage";
+import HomePage from "./components/HomePage/HomePage";
+import DisplayPage from "./components/DisplayPage/DisplayPage";
 import {
     BrowserRouter as Router,
     Switch,

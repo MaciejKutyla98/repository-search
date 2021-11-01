@@ -1,5 +1,5 @@
-@use './variables' as *;
-@use './buttons' as *;
+@use '../../stylesheets/variables' as *;
+@use '../../stylesheets/buttons' as *;
 
 .searchBox {
   position: absolute;

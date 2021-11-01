@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SearchBox from "./SearchBox";
-import ShowHints from "./ShowHints";
-import '../stylesheets/HomePage.scss';
+import SearchBox from "../SearchBox/SearchBox";
+import ShowHints from "../ShowHints/ShowHints";
+import './HomePage.scss';
 
 export default function HomePage(props) {
     const [enteredWord, setEnteredWord] = useState('');

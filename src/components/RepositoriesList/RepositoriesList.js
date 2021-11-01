@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../stylesheets/RepositoriesList.scss';
+import './RepositoriesList.scss';
 
 export default function RepositoriesList(props) {
     const repositoryName = "repository-search";
