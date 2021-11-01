@@ -1,0 +1,17 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.homePage {
+  display: flex;
+  @include setFlex($flex-flow: column wrap);
+}
+
+.searchBoxWrapper {
+  flex: 1;
+}
+
+.showHintsWrapper {
+  flex: 1;
+  @include setFlex();
+}
+

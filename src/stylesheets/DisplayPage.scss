@@ -1,0 +1,19 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.displayPage {
+  display: flex;
+  @include setFlex();
+}
+
+.repositoriesListWrapper {
+  flex: 2;
+  @include setFlex();
+}
+
+.favoriteRepositoryWrapper {
+  flex: 1;
+  @include setFlex();
+}
+
+

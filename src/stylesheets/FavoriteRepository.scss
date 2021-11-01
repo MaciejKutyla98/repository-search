@@ -1,0 +1,24 @@
+@use './variables' as *;
+@use './buttons' as *;
+@use './mixins' as *;
+@use './card' as *;
+
+.favoriteRepositoryContent {
+  @extend %cardContent;
+
+  &_name {
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &_btn {
+    @extend %repositoryBtn;
+
+    &:hover {
+      @include setButtonHover($red);
+    }
+  }
+}

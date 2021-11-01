@@ -1,0 +1,17 @@
+@use './variables' as *;
+@use './buttons' as *;
+@use './mixins' as *;
+@use './card' as *;
+
+.showHintsContent {
+  @extend %cardContent;
+  padding: 16px;
+
+  &_name {
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

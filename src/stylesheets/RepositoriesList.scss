@@ -1,0 +1,40 @@
+@use './variables' as *;
+@use './card' as *;
+@use './buttons' as *;
+@use './mixins' as *;
+
+
+.repositoryContent {
+  @extend %cardContent;
+
+  &_name {
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &_stars {
+    font-size: 24px;
+    padding: 12px;
+
+    &_img {
+      color: $yellow;
+      font-size: 32px;
+    }
+  }
+
+  &_languages {
+    font-size: 20px;
+    padding: 16px;
+  }
+
+  &_btn {
+    @extend %repositoryBtn;
+
+    &:hover {
+      @include setButtonHover($green);
+    }
+  }
+}
