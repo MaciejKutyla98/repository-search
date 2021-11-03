@@ -15,13 +15,16 @@ export default function App() {
     let url = 'https://api.github.com/search/repositories?q=';
 
     function fetchData () {
-        url = `https://api.github.com/search/repositories?q=${enteredWord}`
-        axios.get(url)
-            .then(res => {
-                const data = res.data;
-                console.log(res.data);
-                setFetchedData({data});
-            })
+        url = `https://api.github.com/search/repositories?q=${enteredWord}&per_page=10`
+        try {
+            axios.get(url)
+                .then(res => {
+                    const data = res.data;
+                    setFetchedData({data});
+                })
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     useEffect(() => {
