@@ -7,9 +7,9 @@
 }
 
 .repositoriesListWrapper {
-  flex: 2;
-  @include setFlex();
-}
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+}W
 
 .favoriteRepositoryWrapper {
   flex: 1;

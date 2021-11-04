@@ -28,23 +28,14 @@ export default function App() {
     }
 
     function transformFetchedData (fetchedData) {
-        const result = {
-            fetchedNames: [],
-            fetchedUrl: [],
-            fetchedLanguages: [],
-            fetchedStarsCount: []
-        };
-
-        if (fetchedData !== null) {
-            fetchedData.data.items.forEach((item) => {
-                result.fetchedNames.push(item.name);
-                result.fetchedUrl.push(item.html_url);
-                result.fetchedLanguages.push(item.language);
-                result.fetchedStarsCount.push(item.stargazers_count);
-            });
-        }
-
-        return result;
+        return fetchedData.data.items.map((item) => {
+            return {
+                name: item.name,
+                htmlUrl: item.html_url,
+                language: item.language,
+                stargazersCount: item.stargazers_count
+            };
+        });
     }
 
     useEffect(() => {
@@ -71,7 +62,10 @@ export default function App() {
                 </Route>
                 <Route exact path="/:word">
                     <div className="displayPage">
-                        <DisplayPage enteredWord={enteredWord} />
+                        <DisplayPage
+                            enteredWord={enteredWord}
+                            fetchedData={fetchedData}
+                        />
                     </div>
                 </Route>
             </Switch>

@@ -10,6 +10,8 @@
   &_name {
     text-transform: uppercase;
 
+
+
     &:hover {
       opacity: 0.7;
     }
@@ -17,7 +19,7 @@
 
   &_stars {
     font-size: 24px;
-    padding: 12px;
+    padding: 8px;
 
     &_img {
       color: $yellow;
@@ -27,7 +29,7 @@
 
   &_languages {
     font-size: 20px;
-    padding: 16px;
+    padding: 8px;
   }
 
   &_btn {

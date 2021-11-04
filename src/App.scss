@@ -11,9 +11,6 @@ html {
   height: 100%;
 }
 
-body {
-  overflow: hidden;
-}
 
 .homePage {
   background: url('./images/homePage.jpg') no-repeat center;
@@ -23,9 +20,9 @@ body {
 }
 
 .displayPage {
-  background: url('./images/homePage.jpg') no-repeat center;
+  background-image: url('./images/homePage.jpg');
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  background-attachment: fixed;
 
 }

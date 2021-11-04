@@ -10,7 +10,17 @@ export default function DisplayPage(props) {
     return (
         <div className="displayPage">
             <div className="repositoriesListWrapper">
-                <RepositoriesList />
+                {props.fetchedData.map((repo) => {
+                    return (
+                        <RepositoriesList
+                            name={repo.name}
+                            url={repo.htmlUrl}
+                            star={repo.stargazersCount}
+                            language={repo.language}
+                        />
+                    );
+                })
+                }
             </div>
             <div className="favoriteRepositoryWrapper">
                 <FavoriteRepository />
