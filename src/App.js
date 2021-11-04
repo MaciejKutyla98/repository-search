@@ -20,11 +20,31 @@ export default function App() {
             axios.get(url)
                 .then(res => {
                     const data = res.data;
-                    setFetchedData({data});
+                    setFetchedData(transformFetchedData({data}));
                 })
         } catch (err) {
             console.log(err);
         }
+    }
+
+    function transformFetchedData (fetchedData) {
+        const result = {
+            fetchedNames: [],
+            fetchedUrl: [],
+            fetchedLanguages: [],
+            fetchedStarsCount: []
+        };
+
+        if (fetchedData !== null) {
+            fetchedData.data.items.forEach((item) => {
+                result.fetchedNames.push(item.name);
+                result.fetchedUrl.push(item.html_url);
+                result.fetchedLanguages.push(item.language);
+                result.fetchedStarsCount.push(item.stargazers_count);
+            });
+        }
+
+        return result;
     }
 
     useEffect(() => {
@@ -33,7 +53,8 @@ export default function App() {
         }
     }, [enteredWord]);
 
-    console.log(fetchedData);
+    console.log(fetchedData)
+
   return (
     <div className="repositorySearch">
         <Router>
