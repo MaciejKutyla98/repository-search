@@ -4,11 +4,14 @@
 @use '../../stylesheets/card' as *;
 
 .showHintsContent {
-  @extend %cardContent;
-  padding: 16px;
+  margin: 8px;
+  background-color: $white;
 
   &_name {
     text-transform: uppercase;
+    padding: 4px;
+    border-radius: 25px;
+
 
     &:hover {
       opacity: 0.7;

@@ -3,9 +3,9 @@ import SearchBox from "../SearchBox/SearchBox";
 import ShowHints from "../ShowHints/ShowHints";
 
 import './HomePage.scss';
+import {Spinner} from "react-bootstrap";
 
 export default function HomePage(props) {
-
     return (
         <div className="homePage">
             <div className="searchBoxWrapper">
@@ -14,9 +14,21 @@ export default function HomePage(props) {
                     enteredWord={props.enteredWord}
                 />
             </div>
+            {props.isLoaded ? (
             <div className="showHintsWrapper">
-                <ShowHints />
-            </div>
+                {props.fetchedData.map((repo) => {
+                    return (
+                        <ShowHints
+                            name={repo.name}
+                            url={repo.url}
+                            />
+                        );
+                    })
+                }
+            </div> ) :
+                <div className="spinenr">
+                    <Spinner animation="grow" />
+                </div>}
         </div>
     );
 }

@@ -17,9 +17,9 @@ export default function DisplayPage(props) {
                             url={repo.htmlUrl}
                             star={repo.stargazersCount}
                             language={repo.language}
-                        />
-                    );
-                })
+                            />
+                        );
+                    })
                 }
             </div>
             <div className="favoriteRepositoryWrapper">

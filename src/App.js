@@ -8,10 +8,13 @@ import {
 } from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from 'axios';
+import {Spinner} from 'react-bootstrap';
 
 export default function App() {
     const [fetchedData, setFetchedData] = useState(null);
     const [enteredWord, setEnteredWord] = useState('');
+    const [isLoaded, setIsLoaded] = useState(false);
+
     let url = 'https://api.github.com/search/repositories?q=';
 
     function fetchData () {
@@ -21,6 +24,10 @@ export default function App() {
                 .then(res => {
                     const data = res.data;
                     setFetchedData(transformFetchedData({data}));
+
+                })
+                .finally(() => {
+                    setIsLoaded(true);
                 })
         } catch (err) {
             console.log(err);
@@ -57,16 +64,22 @@ export default function App() {
                             onChange={(newValue) => {
                                 setEnteredWord(newValue)
                             }}
+                            fetchedData={fetchedData}
+                            isLoaded={isLoaded}
                         />
                     </div>
                 </Route>
                 <Route exact path="/:word">
+                    {isLoaded ? (
                     <div className="displayPage">
                         <DisplayPage
                             enteredWord={enteredWord}
                             fetchedData={fetchedData}
                         />
-                    </div>
+                    </div> ) :
+                    <div className="spinenr">
+                        <Spinner animation="grow" />
+                    </div>}
                 </Route>
             </Switch>
         </Router>
