@@ -4,9 +4,9 @@ import './ShowHints.scss';
 export default function ShowHints(props) {
     return (
         <div className="showHintsContent">
-                <span className="repositoryContent_name">
+                <span className="showHintsContent_name">
                     <a href={props.url}
-                       className="repositoryContent_url"
+                       className="showHintsContent_url"
                        target="_blank"
                     >
                         {`${props.name}`}</a>

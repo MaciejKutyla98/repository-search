@@ -20,13 +20,13 @@ export default function HomePage(props) {
                     return (
                         <ShowHints
                             name={repo.name}
-                            url={repo.url}
+                            url={repo.htmlUrl}
                             />
                         );
                     })
                 }
             </div> ) :
-                <div className="spinenr">
+                <div className="spinner">
                     <Spinner animation="grow" />
                 </div>}
         </div>

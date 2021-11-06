@@ -45,6 +45,7 @@ export default function DisplayPage(props) {
                     })
                 }
             </div>
+            <span className="favoriteRepositoryTitle">Favorite repositories:</span>
             <div className="favoriteRepositoryWrapper">
                 {favoriteRepository.map((item) => {
                     return (

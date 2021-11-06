@@ -5,13 +5,13 @@ export default function FavoriteRepository(props) {
 
     return (
         <div className="favoriteRepositoryContent">
-            <h1 className="favoriteRepositoryContent_name">
+            <span className="favoriteRepositoryContent_name">
                 <a href={props.url}
                    className="favoriteRepositoryContent_url"
                    target="_blank"
                 >
                     {`${props.name}`}</a>
-            </h1>
+            </span>
             <button
                 className="favoriteRepositoryContent_btn"
                 onClick={() => {

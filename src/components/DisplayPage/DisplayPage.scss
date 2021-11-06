@@ -8,12 +8,21 @@
 
 .repositoriesListWrapper {
   display: grid;
+  text-align: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-}W
+}
 
 .favoriteRepositoryWrapper {
-  flex: 1;
-  @include setFlex();
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+}
+
+.favoriteRepositoryTitle {
+  color: $white;
+  font-size: 64px;
+  padding: 16px;
+  margin: 16px;
+  -webkit-text-stroke: 2px $black;
 }
 
 

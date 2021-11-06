@@ -76,7 +76,7 @@ export default function App() {
                             fetchedData={fetchedData}
                         />
                     </div> ) :
-                    <div className="spinenr">
+                    <div className="spinner">
                         <Spinner animation="grow" />
                     </div>}
                 </Route>
