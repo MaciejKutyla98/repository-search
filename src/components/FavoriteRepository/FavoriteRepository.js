@@ -12,7 +12,12 @@ export default function FavoriteRepository(props) {
                 >
                     {`${props.name}`}</a>
             </h1>
-            <button className="favoriteRepositoryContent_btn">
+            <button
+                className="favoriteRepositoryContent_btn"
+                onClick={() => {
+                    props.onRemoveButtonClick(props.name);
+                }}
+            >
                 Remove from favorite!
             </button>
         </div>

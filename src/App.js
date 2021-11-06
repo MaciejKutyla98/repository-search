@@ -24,7 +24,6 @@ export default function App() {
                 .then(res => {
                     const data = res.data;
                     setFetchedData(transformFetchedData({data}));
-
                 })
                 .finally(() => {
                     setIsLoaded(true);

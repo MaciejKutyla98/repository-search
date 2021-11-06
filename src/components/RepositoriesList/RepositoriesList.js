@@ -20,7 +20,12 @@ export default function RepositoriesList(props) {
                 <p className="repositoryContent_languages">
                     {`Following languages: ${props.language}`}
                 </p>
-                <button className="repositoryContent_btn">
+                <button
+                    className="repositoryContent_btn"
+                    onClick={() => {
+                        props.onSaveButtonClick(props.name, props.url);
+                    }}
+                >
                     Add to favorite!
                 </button>
             </div>
