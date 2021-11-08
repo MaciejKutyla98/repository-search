@@ -6,8 +6,9 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import axios from 'axios';
+import throttle from "lodash/throttle";
 import {Spinner} from 'react-bootstrap';
 
 export default function App() {
@@ -17,16 +18,14 @@ export default function App() {
 
     let url = 'https://api.github.com/search/repositories?q=';
 
-    function fetchData () {
+    function fetchData (enteredWord) {
         url = `https://api.github.com/search/repositories?q=${enteredWord}&per_page=10`
         try {
             axios.get(url)
                 .then(res => {
                     const data = res.data;
                     setFetchedData(transformFetchedData({data}));
-                })
-                .finally(() => {
-                    setIsLoaded(true);
+                    setIsLoaded(true)
                 })
         } catch (err) {
             console.log(err);
@@ -44,11 +43,10 @@ export default function App() {
         });
     }
 
-    useEffect(() => {
-        if (enteredWord !== ''){
-            fetchData();
-        }
-    }, [enteredWord]);
+    const throttledHandleChange = useMemo(
+        () => throttle(fetchData,5000),
+        []
+    );
 
     console.log(fetchedData)
 
@@ -61,7 +59,8 @@ export default function App() {
                         <HomePage
                             enteredWord={enteredWord}
                             onChange={(newValue) => {
-                                setEnteredWord(newValue)
+                                throttledHandleChange(newValue);
+                                setEnteredWord(newValue);
                             }}
                             fetchedData={fetchedData}
                             isLoaded={isLoaded}
