@@ -7,12 +7,13 @@
 }
 
 .searchBoxWrapper {
+  margin: 8px;
   flex: 1;
 }
 
 .showHintsWrapper {
+  margin: 8px;
   flex: 1;
   @include setFlex();
-
 }
 

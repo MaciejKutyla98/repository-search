@@ -44,7 +44,7 @@ export default function App() {
     }
 
     const throttledHandleChange = useMemo(
-        () => throttle(fetchData,5000),
+        () => throttle(fetchData,1000),
         []
     );
 

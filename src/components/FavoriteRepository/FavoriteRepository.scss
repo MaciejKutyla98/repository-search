@@ -7,7 +7,9 @@
   @extend %cardContent;
 
   &_name {
+    display:inline-block;
     text-transform: uppercase;
+    text-overflow: ellipsis;
 
     &:hover {
       opacity: 0.7;

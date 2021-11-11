@@ -3,26 +3,52 @@
 
 .displayPage {
   display: flex;
+  padding: 16px;
   @include setFlex();
 }
 
 .repositoriesListWrapper {
-  display: grid;
-  text-align: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+      display: grid;
+      text-align: center;
+      grid-template-columns: 1fr;
+
+  @media (min-width: 900px) {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .favoriteRepositoryWrapper {
+  padding: 8px;
+  margin: 8px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  text-align: center;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 900px) {
+    padding: 8px;
+    margin: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .favoriteRepositoryTitle {
+  display: flex;
+  justify-content: center;
   color: $white;
   font-size: 64px;
-  padding: 16px;
-  margin: 16px;
   -webkit-text-stroke: 2px $black;
-}
 
+  @media (min-width: 900px) {
+    display: flex;
+    justify-content: center;
+    color: $white;
+    font-size: 64px;
+    padding: 16px;
+    margin: 16px;
+    -webkit-text-stroke: 2px $black;
+  }
+}
 
